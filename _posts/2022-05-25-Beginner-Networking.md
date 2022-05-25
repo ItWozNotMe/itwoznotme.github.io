@@ -6,9 +6,8 @@ Topics: #Networking <br>
 
 Devices has two means of identifications, these are :
 
-An IP ADDRESS
-A MEDIA CONTROL ACCESS (MAC) ADDRESS
-Trash/Misc 1/Images/Pasted image 20210831142325.png
+ An IP ADDRESS <br>
+ A MEDIA CONTROL ACCESS ADDRESS (MAC)
 
 An IP Address is a set of numbers that are divided into four octets, this number is calculated through Subnetting. IP Addresses can change from device to device but two devices cannot share the same IP Address.
 
