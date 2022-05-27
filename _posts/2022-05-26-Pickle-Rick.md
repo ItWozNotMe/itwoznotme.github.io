@@ -47,5 +47,27 @@ Using 'ls' to list directory contents results in a directory listing with 'Sup3r
 
 ![image](https://user-images.githubusercontent.com/74746341/170712040-ca94173b-fac6-44a2-8e09-9516423513cf.png)
 
+To attempt to gain a foothold I navigated to https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet and started a  listener on port 4444
+
+![image](https://user-images.githubusercontent.com/74746341/170712591-c98ae0fa-379a-43cb-a9cb-c18a96190015.png)
+
+To start I first used a perl reverse shell
+
+![image](https://user-images.githubusercontent.com/74746341/170712728-9721a33e-4197-45c7-b276-8c07a36631a2.png)
+
+Initial attempts at gaining a reverse shell did not work and instead I used a perl reverse shell from https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
+
+![image](https://user-images.githubusercontent.com/74746341/170714704-174f8471-71df-4b5a-aebb-f19f8f8451ff.png)
+
+This resulted in a perl reverse shell, after this I can start retriving the flags for the ctf. The second ingredient being found within /home/rick, this also confirms the existance of a rick user. The final flag for the ctf likely requires additional privileges.
+
+Using sudo -l displays that www-data can run any command without a password.
+
+![image](https://user-images.githubusercontent.com/74746341/170717748-dbe72ff4-ba0f-4a5d-be63-3a7211eee59d.png)
+
+Using "sudo su" results in root access, this can be confirmed using the "whoami" command.
+The third flag can be found within /root.
+
+This was a fairly easiy ctf, with the foothold into the machine being gained through CWE-312, allowing for access into /portal.php, where a vulnerable input box resulted in a reverse shell, and the lack of permissons resulted in an privilege escalation.
 
 
