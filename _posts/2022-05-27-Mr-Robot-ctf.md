@@ -1,0 +1,82 @@
+##Mr Robot
+
+![image](https://user-images.githubusercontent.com/74746341/170728675-20d8c6bf-2d55-4efe-ae95-9a25a6a9b9ed.png)
+
+Type: #TryHackMe
+Links: https://tryhackme.com/room/mrrobot
+
+This room will allow me to start completing the ‘Starter Series’ on TryHackMe; a series of beginner ctfs to assist with developing my penetration testing skils.
+
+Starting the Machine within TryHackMe, I opted to use a flag -sV with my nmap script to enumerate versions of the services running on the target machine, the command resulted the enumeration of port 22/ssh, port 80/httpd and port 443/ssl/http, nmap could not enumerate the versions.
+
+![image](https://user-images.githubusercontent.com/74746341/170729074-7679a44c-c1a9-4ac9-8658-81ce7f6f370d.png)
+
+The website reveals a command line game, but nothing too intresting, as good practise I view the source of pages within the webservers in case of hard-coded credentials, in this case I opted to use gobuster to find directories within the webserver.
+
+![image](https://user-images.githubusercontent.com/74746341/170729623-3dce7ab6-1bba-4733-8949-132218f9e894.png)
+
+Most of these lead to a 403 error, but it did reveal the wp-login.php within the webserver, this can be further enumerated using a tool like wpscan. Viewing the page source indicates that the version is 4.3.1.
+
+Visting http://10.10.112.168/robots reveals "fsociety.dic" and "key-1-of-3.txt"
+
+![image](https://user-images.githubusercontent.com/74746341/170730642-26dc608f-ed4d-43a5-bb97-c394ac559893.png)
+
+Navigating to http://10.10.112.168/key-1-of-3.txt reveals the first flag for the ctf and navigating to http://10.10.112.168/fsociety.dic starts a download, the file contains a number of names - possible indicating a wordlist.
+
+I decided to use burpsuite's intruder to attempt to brute force the wp-login, using the fsociety.dic wordlist.
+
+![image](https://user-images.githubusercontent.com/74746341/170731468-087ba69b-f20e-43d8-85f4-6fb68ccf04ed.png)
+ 
+![image](https://user-images.githubusercontent.com/74746341/170731409-b7210bd4-dcb4-4872-88fa-6abea3da396b.png)
+
+Using the wordlist shows "Eliot" has a longer lenght then all other username attemps - this could indicate a successful username attempt, with an unsuccessful password.
+
+![image](https://user-images.githubusercontent.com/74746341/170731842-ac737feb-6df1-4ff5-8169-148c2c1b8650.png)
+
+Using this username alongside a password results in the server displaying that the password is incorrect for the usernamee "Elliot", meaning that the password is the only thing left to crack.
+
+![image](https://user-images.githubusercontent.com/74746341/170732053-8827fb7c-9adb-457b-8c83-4942f1baf14f.png)
+
+The options to crack the password are using hydra or wpscan, I opted to use wpscan as in this scenario it would be easier. The main flags used were --url to specify host -U to indicat user and -P to specify the passowrd list.
+
+![image](https://user-images.githubusercontent.com/74746341/170732741-1e566a01-1ac5-48f2-b740-5009998d2523.png)
+
+The password takes a while to crack - around 20 - 30 mins.
+
+![image](https://user-images.githubusercontent.com/74746341/170735325-e11639c5-a66e-412c-830d-e79d085da820.png)
+
+Navigating to plugins, I found that the plugins can be edited, starting a listener on my host machine using netcat. I then navigated to php-reverse-shell by pentestmonkey and uploaded the script.
+
+![image](https://user-images.githubusercontent.com/74746341/170735725-8c548048-5eae-444c-a6ce-fc246f3c8895.png)
+
+![image](https://user-images.githubusercontent.com/74746341/170735603-5067def7-a4cb-4069-b422-c2d84f48546f.png)
+
+Afteer this I visted http://10.10.112.168/wordpress/wp-content/themes/twentyfifteen/404.php and got a reverse shell
+
+![image](https://user-images.githubusercontent.com/74746341/170736286-ba46c62c-9bfd-491c-94f7-e1933c668f1c.png)
+
+Using python -c 'import pty; pty.spawn("/bin/bash")' initalises a more stable shell, after using this I navigated to /home/robot and used found a password.raw-md5 file
+
+![image](https://user-images.githubusercontent.com/74746341/170736594-976dde29-f0c0-4a39-a2ff-7174664de26b.png)
+
+As the hash is an MD5 it can be cracked fairly easily using crackstation.
+
+![image](https://user-images.githubusercontent.com/74746341/170736886-b620e16e-45b9-43b9-b62f-a7d420099e88.png)
+
+Using robot as the user I used the su command to change user.
+
+![image](https://user-images.githubusercontent.com/74746341/170737147-12cd7e22-b526-488e-bb46-a17811aa74d8.png)
+
+After this I had the permissions to cat out key-2-of-3.txt, and to find key 3 I would need to escalate my priveliges. My first attempt was to run sudo -l but robot does not have access to this. After this I used the find command to see files that had SUID.
+
+![image](https://user-images.githubusercontent.com/74746341/170737735-2ccbedb5-ebf3-462e-aa4e-d23c3c069292.png)
+
+The hint given by TryHackMe involved nmap, and the find command revealed that this had SUID, meaing it could be the vector for privilege escalation, navigating to GTFOBins provides a walkthrough on gaining root using nmap.
+
+![image](https://user-images.githubusercontent.com/74746341/170737951-fa305e10-fc6c-4371-9e20-99afa68c1058.png)
+
+![image](https://user-images.githubusercontent.com/74746341/170738206-de9142f9-fa68-42b9-8288-8fd4a4912fba.png)
+
+Exectuing these commands provides root access, and the last key is found within the /root directory.
+
+This CTF was slightly more difficult than previous ctf, and more knowledge on privilege escalation is needed for future CTFs.
