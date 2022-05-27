@@ -4,7 +4,7 @@
 
 
 Type: #TryHackMe <br>
-Links: [https://tryhackme.com/room/walkinganapplication](https://tryhackme.com/room/picklerick) <br>
+Links: [https://tryhackme.com/room/picklerick](https://tryhackme.com/room/picklerick) <br>
  
 This room will allow me to start completing the 'Starter Series' on TryHackMe; a series of beginner ctfs to assist with developing my penetration testing skils.
 
