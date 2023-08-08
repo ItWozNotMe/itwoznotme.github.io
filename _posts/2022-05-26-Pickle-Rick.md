@@ -6,13 +6,13 @@
 Type: #TryHackMe <br>
 Links: [https://tryhackme.com/room/picklerick](https://tryhackme.com/room/picklerick) <br>
  
-This room will allow me to start completing the 'Starter Series' on TryHackMe; a series of beginner ctfs to assist with developing my penetration testing skils.
+This room will allow me to start completing the 'Starter Series' on TryHackMe; a series of beginner ctfs to assist with developing my penetration testing skills.
 
-Starting the Machine within TryHackMe, I opted to use a flag -sV with my nmap script to enumerate versions of the services running on the target machine, the command resulted the enumeration of port 22/ssh running OpenSSH 7.2p2 and port 80/http running Apache Version 2.4.18.
+Starting the Machine within TryHackMe, I opted to use a flag -sV with my Nmap script to enumerate versions of the services running on the target machine, the command resulted in the enumeration of port 22/ssh running OpenSSH 7.2p2 and port 80/http running Apache Version 2.4.18.
 
 ![image](https://user-images.githubusercontent.com/74746341/170707659-271cd971-b8bf-497c-84c4-4f66dc03fdaf.png)
 
-Visting http://10.10.51.201/ yeilded a websever, there is no inital information on the webserver so I viewed the source of the page.
+Visting http://10.10.51.201/ yielded a web server, there is no initial information on the webserver so I viewed the source of the page.
 
 ![image](https://user-images.githubusercontent.com/74746341/170709387-7a8ad1bc-3d87-47ba-bb7d-e456b7bea9cb.png)
 
@@ -27,19 +27,19 @@ Before using a tool like gobuster to brute force potential directories, I used c
 
 http://10.10.51.201/robots.txt contained 'Wubbalubbadubdub' which could be used alongside the username 'R1ckRul3s'.
 
-I attempted to login to the SSH server on port 22 using these credentails, but was denied, meaning more enumeration on the webserver is needed.
+I attempted to log in to the SSH server on port 22 using these credentials but was denied, meaning more enumeration on the webserver is needed.
 
 ![image](https://user-images.githubusercontent.com/74746341/170710724-cefd75c4-1a1d-4a72-b99e-278188a34739.png)
 
-A gobuster scan quickly revealed /assets, visting http://10.10.51.201/assets/ reveals a number of files.
+A gobuster scan quickly revealed /assets, visiting http://10.10.51.201/assets/ reveals a number of files.
 
 ![image](https://user-images.githubusercontent.com/74746341/170710836-362088a1-680b-4214-8c14-b96bcbcca943.png)
 
-This credentials can be used on a login page at http://10.10.51.201/login.php
+These credentials can be used on a login page at http://10.10.51.201/login.php
 
 ![image](https://user-images.githubusercontent.com/74746341/170711587-c8477ba7-0a99-450f-8a68-cd93dc0a0341.png)
 
-The credentials allow for succesful authentication and redirect to http://10.10.51.201/portal.php, on this page is an input box that allows for the exection of commands.
+The credentials allow for successful authentication and redirect to http://10.10.51.201/portal.php, on this page is an input box that allows for the execution of commands.
 
 ![image](https://user-images.githubusercontent.com/74746341/170711792-eb0187c0-297c-4263-be70-24d25dbd239a.png)
 
@@ -51,15 +51,15 @@ To attempt to gain a foothold I navigated to https://pentestmonkey.net/cheat-she
 
 ![image](https://user-images.githubusercontent.com/74746341/170712591-c98ae0fa-379a-43cb-a9cb-c18a96190015.png)
 
-To start I first used a perl reverse shell
+To start I first used a Perl reverse shell
 
 ![image](https://user-images.githubusercontent.com/74746341/170712728-9721a33e-4197-45c7-b276-8c07a36631a2.png)
 
-Initial attempts at gaining a reverse shell did not work and instead I used a perl reverse shell from https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
+Initial attempts at gaining a reverse shell did not work and instead, I used a reverse shell from https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
 
 ![image](https://user-images.githubusercontent.com/74746341/170714704-174f8471-71df-4b5a-aebb-f19f8f8451ff.png)
 
-This resulted in a perl reverse shell, after this I can start retriving the flags for the ctf. The second ingredient being found within /home/rick, this also confirms the existance of a rick user. The final flag for the ctf likely requires additional privileges.
+This resulted in a reverse shell, after this, I can start retrieving the flags for the ctf. The second ingredient being found within /home/rick, also confirms the existence of a rick user. The final flag for the ctf likely requires additional privileges.
 
 Using sudo -l displays that www-data can run any command without a password.
 
@@ -68,6 +68,6 @@ Using sudo -l displays that www-data can run any command without a password.
 Using "sudo su" results in root access, this can be confirmed using the "whoami" command.
 The third flag can be found within /root.
 
-This was a fairly easiy ctf, with the foothold into the machine being gained through CWE-312, allowing for access into /portal.php, where a vulnerable input box resulted in a reverse shell, and the lack of permissons resulted in an privilege escalation.
+This was a fairly easy ctf, with the foothold into the machine being gained through CWE-312, allowing for access into /portal.php, where a vulnerable input box resulted in a reverse shell, and the lack of permissions resulted in a privilege escalation.
 
 
