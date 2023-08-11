@@ -54,7 +54,7 @@ For example, a common tactic is the use of reconnaissance against a system to di
 
 This series of phases also accommodates an attacker creating a form of persistence
 
-The following section is copy and pasted from TryHackMe:
+The following section is copied and pasted from TryHackMe:
 
 Reconnaissance (MITRE Tactic TA0043)
 
@@ -124,4 +124,53 @@ For example, an adversary can gain access to a web server that is publically acc
 
 ![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/cb3c1c0e-702d-497f-b77e-f344d9ced3ca)
 
+## Phase: Through (Network Propagation)
+
+This phase starts  on completion of accessing the target network, the attacker would seek additional access and privileges to fufil their objectives.
+
+
+Pivoting (MITRE Tactic TA0008)
+
+Once the attacker has access to the system, they would use it as their staging site and a tunnel between their command operations and the victim’s network. The system would also be used as the distribution point for all malware and backdoors at later stages.
+Discovery (MITRE Tactic TA0007)
+
+The adversary would uncover information about the system and the network it is connected to. Within this stage, the knowledge base would be built from the active user accounts, the permissions granted, applications and software in use, web browser activity, files, directories and network shares, and system configurations.
+Privilege Escalation (MITRE Tactic TA0004)
+
+Following their knowledge-gathering, the adversary would try to gain more prominent permissions within the pivot system. They would leverage the information on the accounts present with vulnerabilities and misconfigurations found to elevate their access to one of the following superior levels:
+
+    SYSTEM/ ROOT.
+    Local Administrator.
+    A user account with Admin-like access.
+    A user account with specific access or functions.
+
+Execution (MITRE Tactic TA0002)
+
+Recall when the adversary set up their attack infrastructure. Once the attacker has access to the system, they would use it as their staging site and a tunnel between their command operations and the victim’s network. The system would also be used as the distribution point for all malware and backdoors at later stages. and weaponised payloads? This is where they deploy their malicious code using the pivot system as their host. Remote trojans, C2 scripts, malicious links and scheduled tasks are deployed and created to facilitate a recurring presence on the system and uphold their persistence.
+Credential Access (MITRE Tactic TA0006)
+
+Working hand in hand with the Privilege Escalation stage, the adversary would attempt to steal account names and passwords through various methods, including keylogging and credential dumping. This makes them harder to detect during their attack as they would be using legitimate credentials.
+
+Lateral Movement (MITRE Tactic TA0008)
+
+With the credentials and elevated privileges, the adversary would seek to move through the network and jump onto other targeted systems to achieve their primary objective. The stealthier the technique used, the better.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/463af450-9c27-4b55-835b-1ec569d929fb)
+
+## Phase: Out (Objectives)
+
+Collection MITRE Tactic (TA0009)
+
+After all the hunting for access and assets, the adversary will be seeking to gather all the valuable data of interest. This, in turn, compromises the confidentiality of the data and would lead to the next attack stage – Exfiltration. The main target sources include drives, browsers, audio, video and email.
+
+Exfiltration (MITRE Tactic TA0010)
+
+To elevate their compromise, the adversary would seek to steal data, which would be packaged using encryption measures and compression to avoid any detection. The C2 channel and tunnel deployed in the earlier phases will come in handy during this process.
+Impact (MITRE Tactic TA0040)
+
+If the adversary seeks to compromise the integrity and availability of the data assets, they would manipulate, interrupt or destroy these assets. The goal would be to disrupt business and operational processes and may involve removing account access, disk wipes, and data encryption such as ransomware, defacement and denial of service (DoS) attacks.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/bca5d064-f052-4d7d-b200-2fd3b922f6eb)
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/a0b27160-ddd8-463b-a8e4-5e02a04fba64)
 
