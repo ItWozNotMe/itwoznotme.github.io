@@ -1,6 +1,6 @@
 ![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/0f0e0b9c-8f0f-433f-bd6f-a730b0ab4ad3)
 
-Type:#TryHackMe
+Type:#TryHackMe <br>
 Link: https://tryhackme.com/room/unifiedkillchain
 
 This is a walkthrough for TryHackMe's Unified Cyber Kill Chain room under the SOC Level 1 learning path.
