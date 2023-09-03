@@ -27,4 +27,4 @@ Upon Installation the name will need to be changed to DC this can be done via Se
 
 ![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/74c66fc0-e35a-4050-8fa7-f49218b73a73)
 
-After this a client machine will need to be set up, this can be done by installing the Windows 10 enterprise edition from https://www.microsoft.com/en-gb/evalcenter/download-windows-10-enterprise and selecting 64-bit download. This machine has the same settings as the server, using a bridged network and removing the floppy disk, The machine is called the helpdesk to replicate a real scenario.
+After this a client machine will need to be set up, this can be done by installing the Windows 10 enterprise edition from https://www.microsoft.com/en-gb/evalcenter/download-windows-10-enterprise and selecting 64-bit download. This machine has the same settings as the server, using a bridged network and removing the floppy disk. The machine is called the helpdesk to replicate a real scenario. This machine will need to have its name changed to helpdesk in the settings, and then cloned, creating a new machine called staff.
