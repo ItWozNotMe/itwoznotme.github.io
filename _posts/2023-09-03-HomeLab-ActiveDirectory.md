@@ -28,3 +28,38 @@ Upon Installation the name will need to be changed to DC this can be done via Se
 ![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/74c66fc0-e35a-4050-8fa7-f49218b73a73)
 
 After this a client machine will need to be set up, this can be done by installing the Windows 10 enterprise edition from https://www.microsoft.com/en-gb/evalcenter/download-windows-10-enterprise and selecting 64-bit download. This machine has the same settings as the server, using a bridged network and removing the floppy disk. The machine is called the helpdesk to replicate a real scenario. This machine will need to have its name changed to helpdesk in the settings, and then cloned, creating a new machine called staff.
+
+Next, the DC virtual machine needs to be re-launched. Installing active directory can be done via the server manager.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/e8fd36b4-eaa1-4fb2-bcf4-f389a5793581)
+
+Following the installation wizard, within the results section a new forest can be created; a forest is a logical container that contains the domains, users, computers and group policies. This can be done after promoting the server to a domain controller
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/aca52a81-f574-4f9e-9723-1da4c89fd266)
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/3510d995-3784-42b6-a6c3-25c75b098a9c)
+
+Following the installation wizard, and waiting for the installation, after a restart the domain controller was successfully installed.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/ff51285e-324b-42cf-923d-3b28fc335cc5)
+
+The next stage is to create a new user, I created a helpdesk account, and will then allocate it some permissions.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/40dc16ba-72ae-4cea-99c7-c7076ad57b63)
+
+Clicking properties on the helpdesk account and navigating to "member of" I allocated the helpdesk the domain admin role.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/6354f3cb-10a7-40cd-9d57-b933b0d9fdfe)
+
+Launching the helpdesk virtual machine, the domain controller IP address can be set as the helpdesk's DNS server.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/70429ca3-1b3c-422f-88c0-71c2d7489da2)
+
+After this the domain name can be entered through access work or school, followed by entering the credentials established by the dc.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/c76a1477-8e0b-4415-b68f-cd79955f2713)
+
+Navigating to the domain controller, under the management for active directory > computers the helpdesk virtual machine can be seen, confirming their connection.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/fb7f51c4-888a-478d-869f-ec8edd96d3ef)
+
