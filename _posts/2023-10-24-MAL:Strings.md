@@ -14,7 +14,7 @@ We're all security-minded people here and know that writing down passwords isn't
 
 ![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/9810732b-fc10-4d22-aa2b-3e94dd3b45ba)
 
-After downloading the task files, the exe file was converted to a txt using strings; a program that is commonly used in malware analysis to extact strings from the suspected binary.
+After downloading the task files, the exe file was converted to a txt using strings; a program that is commonly used in malware analysis to extract strings from the suspected binary.
 
 ![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/89c1853b-72d6-4db0-a285-d87bd184584d)
 
