@@ -43,5 +43,12 @@ Generic SSH Configuration
 
 Server Home Screen
 
+## Final Comments/Future Implementations
+The creation of four assets with defualt configurations allows for me to test these apps and services via a asset management report and a penetration test, developing my writing and skills within security. The setup also helps my general IT skills by managing a server. The overall network layout should look like this, avoiding any other devices household members use, the LAN is accessable from outside the network via tailscale, this eliminates the use of a reverse proxy and limits the attack vectors to inside threats only making applications easy to secure and aiding my learning. 
 
-The creation of three assets with defualt configurations allows for me to test these apps and services via a asset management report and a penetration test, developing my writing and skills within security. The setup also helps my general IT skills by managing a server.
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/1973298e-cf77-49e9-b59f-eb45743c41b9)
+
+This blog post invovled setting up a raspberry pi and creating various apps that will serve as assets for my project, teaching general linux skills such as ssh and docker, this is a larger project and will involve multiple blog posts to complete, the follow up post will involve Asset Discovery and Management & making a virtual machine for penetration testing.
+
+
+
