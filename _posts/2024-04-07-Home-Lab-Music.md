@@ -1,6 +1,6 @@
 ## Home Lab Asset Creation
 
-This project involves using navidrone on an linux server, with the aim of it running during the day. The scope of the project is to have an server that can be accessed internally and externally via a webpage or application. To fufil this requirement
+This project involves running on an linux server, with the aim of it running during the day. The scope of the project is to have an server that can be accessed internally and externally via a webpage or application. To fufil this requirement
 a raspberry pi was purchased as my usual projects involve a virtual machine which would have been too costly. Therefore, a rasberry 4 with 8gb of ram was used running ubuntu server on arm archiecture. This project will be broken up into four parts: Installation of ubuntu server, docker and portainer install, navidrome install and final comments, security measures and future implementations.
 
 ## Installation of Ubuntu Server
@@ -27,8 +27,16 @@ this command installs portainer on port 9443 and starts the dockerized container
 
 After creating a secure password on portainer at "https://localhost:9443" navidrome can be deployed via stacks
 
+## Asset One
+
+Navidrome Application port 4533
+
 ![tempsnip](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/5f6a9926-cdec-4cc0-8c22-cd646dd13a76)
 
 Music can then be added to the server ONLY if a license is aquired and music is stored legally, genrally in the UK you are allowed one digital copy and can only use it if the content is not shared or sold for profit. I am not uploading music to the server as this is project is more about creating assets that I will secure and defend with the intention of creating asset management reports to develop skills within cyber security whilst also learning ubuntu server. 
 
+## Asset Two 
 
+Generic SSH Configuration
+
+## Asset Three
