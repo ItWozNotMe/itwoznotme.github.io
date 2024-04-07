@@ -1,4 +1,4 @@
-## Home Lab Music
+## Home Lab Asset Creation
 
 This project involves using navidrone on an linux server, with the aim of it running during the day. The scope of the project is to have an music server that can be accessed internally and externally via a webpage or application. To fufil this requirement
 a raspberry pi was purchased as my usual projects involve a virtual machine which would have been too costly. Therefore, a rasberry 4 with 8gb of ram was used running ubuntu server on arm archiecture. This project will be broken up into four parts: Installation
