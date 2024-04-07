@@ -1,7 +1,7 @@
 ## Home Lab Asset Creation
 
 This project involves running an linux server, with the aim of it running during the day. The scope of the project is to have an server that can be accessed internally and externally via a webpage or application. To fufil this requirement
-a raspberry pi was purchased as my usual projects involve a virtual machine which would have been too costly. Therefore, a rasberry 4 with 8gb of ram was used running ubuntu server on arm archiecture. This project will be broken up into four parts: Installation of ubuntu server, docker and portainer install, navidrome install and final comments, security measures and future implementations.
+a raspberry pi was purchased as my usual projects involve a virtual machine which would have been too costly. Therefore, a rasberry 4 with 8gb of ram was used running ubuntu server on arm archiecture. This project will be broken up into four parts: Installation of ubuntu server, docker and portainer install, installation of assets and final comments, security measures and future implementations.
 
 ## Installation of Ubuntu Server
 The stock microSD of 32GB was flashed using raspberry pi imager and ubuntu server was selected under other "general purpose operating systems"
