@@ -25,3 +25,11 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /va
 this command installs portainer on port 9443 and starts the dockerized container on boot, the two commands -v are refrencing the storage place followed by a bind storage on the physical drive.
 
 ![tempsnip](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/86f14b85-26ea-486f-9839-bf51f877bdbb)
+
+After creating a secure password on portainer at "https://localhost:9443" navidrome can be deployed via stacks
+
+![tempsnip](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/5f6a9926-cdec-4cc0-8c22-cd646dd13a76)
+
+Music can then be added to the server ONLY if a license is aquired and music is stored legally, genrally in the UK you are allowed one digital copy and can only use it if the content is not shared or sold for profit. I am not uploading music to the server as this is project is more about creating assets that I will secure and defend with the intention of creating asset management reports to develop skills within cyber security whilst also learning ubuntu server. 
+
+
