@@ -1,6 +1,6 @@
 ## Home Lab Asset Creation
 
-This project involves running on an linux server, with the aim of it running during the day. The scope of the project is to have an server that can be accessed internally and externally via a webpage or application. To fufil this requirement
+This project involves running an linux server, with the aim of it running during the day. The scope of the project is to have an server that can be accessed internally and externally via a webpage or application. To fufil this requirement
 a raspberry pi was purchased as my usual projects involve a virtual machine which would have been too costly. Therefore, a rasberry 4 with 8gb of ram was used running ubuntu server on arm archiecture. This project will be broken up into four parts: Installation of ubuntu server, docker and portainer install, navidrome install and final comments, security measures and future implementations.
 
 ## Installation of Ubuntu Server
@@ -40,3 +40,8 @@ Music can then be added to the server ONLY if a license is aquired and music is 
 Generic SSH Configuration
 
 ## Asset Three
+
+Server Home Screen
+
+
+The creation of three assets with defualt configurations allows for me to test these apps and services via a asset management report and a penetration test, developing my writing and skills within security. The setup also helps my general IT skills by managing a server.
