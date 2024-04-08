@@ -33,7 +33,7 @@ Navidrome Application port 4533
 
 ![tempsnip](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/5f6a9926-cdec-4cc0-8c22-cd646dd13a76)
 
-Music can then be added to the server ONLY if a license is aquired and music is stored legally, genrally in the UK you are allowed one digital copy and can only use it if the content is not shared or sold for profit. I am not uploading music to the server as this is project is more about creating assets that I will secure and defend with the intention of creating asset management reports to develop skills within cyber security whilst also learning ubuntu server. 
+Music can then be added to the server ONLY if a license is aquired and music is stored legally, generally in the UK you are allowed one digital copy and can only use it if the content is not shared or sold for profit. I am not uploading music to the server as this is project is more about creating assets that I will secure and defend with the intention of creating asset management reports to develop skills within cyber security whilst also learning ubuntu server. 
 
 ## Asset Two 
 
