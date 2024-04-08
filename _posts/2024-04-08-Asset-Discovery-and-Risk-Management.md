@@ -5,7 +5,7 @@
 
 ## Inventory of Assets
 
-<h2 > Physical Assets </h1>
+<h2 > Physical Assets </h2>
 
 | Asset              | IP Address | Domain | Phyiscal Location |
 |--------------------|------------|--------|-------------------|
