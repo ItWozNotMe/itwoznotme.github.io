@@ -24,8 +24,8 @@
 | UpTimeKuma    | 3001 | HTTPS   | Low      | Montioring Applcation           |
 
 <h2> nmap internal scan </h2>
-![tempsnip](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/bf358953-734d-4f0c-b9cf-a75da628bc9e)
 
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/c006f73e-f316-4fa9-b816-039050082761)
 
 ## Threat Modelling
 
