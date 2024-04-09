@@ -23,5 +23,9 @@
 | Homer         | 8080 | HTTP    | Medium   | Home Page Web Site              |
 | UpTimeKuma    | 3001 | HTTPS   | Low      | Montioring Applcation           |
 
+<h2> nmap internal scan </h2>
+![tempsnip](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/bf358953-734d-4f0c-b9cf-a75da628bc9e)
+
+
 ## Threat Modelling
 
