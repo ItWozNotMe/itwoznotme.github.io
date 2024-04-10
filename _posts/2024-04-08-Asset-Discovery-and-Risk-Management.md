@@ -38,3 +38,44 @@ Threat modelling is a process that involves a structured approach to identifying
 
 ## Risk Managment
 
+Annual Loss Expectancy is calcualted by assesing and dertermining an asset value (AV)
+Identifying potential threats to each asset.
+
+Firstly, the exposure factor (EF) needs to be determined for the threat for each asset, followed by calcualting the single loss expectancy (SLE) with the formulae ALE = SLE x ARO
+The ARO is the annual rate of occurence, typically expressed as a decimal and is the likleihood of the incident occuring per year.
+
+Determining the Single Loss Expectancy (SLE) is calculated using the formula SLE = AV x EF, this metric is used to determine the loss expectancy for a single occurrence event to a specific asset.
+
+Example run through
+
+| Digital Asset | AV   | EF      | ARO | SLE   | ALE   |
+|---------------|------|---------|-----|-------|-------|
+| SSH           | £100 | 0.50    |  4  |  £50  |  £200 |
+| Navidrome     | £60  | 0.75    |  9  |  £45  |  £405 |   
+| Homer         | £0   | 0.60    |  8  |  £0   |  £0   |          
+| UpTimeKuma    | £10  | 0.25    |  4  |  £2.5 |  £10  |         
+
+SLE SSH = £100 x 0.50 = £50
+ALE SSH = £50 x 4 = £200
+
+SLE Navidrome = £60 x 0.75 = £45
+ALE Navidrome = £45 x 9 = £405
+
+SLE Homer = £0 x 0.60 = £0
+ALE Homer = £0 x 8 = £0
+
+SLE UpTimeKuma = £10 x 0.25 = £2.5
+ALE = £2.5 x 4 = £10
+
+
+## Conclusion
+
+This blog post invovled asset discovery and risk management, whilst being rather basic it was incredibly insightful to identify risks within my local network, whilst they are unlikely to be exploited due to the server's design choices it is important to see how risk is identified and calculated.
+
+Important Takeaways:
+
+    Single Loss Expectancy (SLE):
+    SLE = AV x EF
+
+    Annual Loss Expectancy (ALE):
+    ALE = SLE x ARO
