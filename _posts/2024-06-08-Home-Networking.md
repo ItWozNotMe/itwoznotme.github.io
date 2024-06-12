@@ -40,9 +40,40 @@ Opensense was booted onto the HP Prodesk using balenaEtcher and configuring the 
 
 ![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/16e4e375-a785-4f6e-80de-50a53abb93d1)
 
-After completing the installation wizard and a quick install the next stage was to self-sign the website preventing man-in-the-middle attacks.
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/d5eb58d2-12ab-41e3-956a-187279e531fa)
+
+## Setting Up First Rules
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/d60187c9-b034-4f83-807b-14aa4033366c)
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/a2e84065-1272-49bd-aa3a-3dc5fe15fe48)
 
 
+My first rule was to block incoming traffic from a telnet port left open by another user. I also blocked this for LAN users as I intend to use SSH as a more secure alternative.
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/aff470f0-51d5-47b9-b590-358e8f64c495)
+
+## Explanation of Rules
+
+Incoming Telnet Traffic: The first rule blocks Telnet traffic coming from the internet into your network. This prevents external entities from initiating Telnet connections to devices within your network.
+
+Outgoing Telnet Traffic: The second rule blocks Telnet traffic originating from devices within your network and attempting to connect to external Telnet servers. This prevents devices within your network from using Telnet to connect to potentially insecure external services.
+
+These same rules were applied to rcpbind
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/0e779bd7-b176-4cf5-bdad-89b56596a2f4)
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/17fe249c-17ed-449f-b6d2-58db1f319455)
+
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/0e3262e8-fc7a-4310-9eea-7141bb78bced)
+![image](https://github.com/ItWozNotMe/itwoznotme.github.io/assets/74746341/9199c079-ac2a-406f-b9fa-d1dc6396f8b9)
+
+These screenshots show an attempt to connect to ports 111 and 22 that were blocked on Opnsense resulting in the connection being refused meaning the firewall is working as intended.
+
+
+## Future Improvements (Part Two)
+1. My main PC now has wifi up and running but cannot ping 192.168.0.105 (Raspberry Pi) as it is not in the same subnet, this would need to be configured by turning DHCP on within the network config file.
+2. Pi-Hole on Raspberry Pi
+3. PKI and Self-Signed Certificates for Opnsense and other self-hosted sites.
 
 
 
